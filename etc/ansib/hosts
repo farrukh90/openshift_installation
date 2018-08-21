@@ -1,0 +1,31 @@
+## db-[99:101]-node.example.com
+
+[OSEv3:children]
+masters
+nodes
+
+[OSEv3:vars]
+deployment_type=origin
+containerized=true
+openshift_release=v1.5
+openshift_image_tag=v1.5.0
+openshift_public_hostname=openshiftmaster.davinci-onsite.com
+openshift_master_default_subdomain=apps.openshiftmaster.davinci-onsite.com
+openshift_node_groups=aws
+skip_sanity_checks=true
+
+
+[masters]
+34.200.251.37 openshift_node_group_name="openshiftmaster.davinci-onsite.com"
+
+[nodes]
+openshiftmaster.davinci-onsite.com
+openshiftworker1.davinci-onsite.com
+openshiftworker2.davinci-onsite.com
+
+
+34.200.251.37 aws="openshiftmaster.davinci-onsite.com"
+34.205.247.122 aws="openshiftworker1.davinci-onsite.com"
+34.232.95.6 aws="openshiftworker1.davinci-onsite.com"
+
+
